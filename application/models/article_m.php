@@ -112,7 +112,9 @@ class article_m extends CI_Model {
                 $this->db->where(array('category_id' => $id));
             }
             $this->db->where(array('status' => 'Approve'));
-            $this->db->order_by("article_id", "desc"); 
+            $this->db->order_by("date", "asc");
+            $this->db->order_by("article_id", "desc");
+
             $res = $this->db->get('article',10,0);
 
             $allData = array();
@@ -211,7 +213,8 @@ class article_m extends CI_Model {
                 $this->db->where(array('category_id' => $id));
             }
             $this->db->where(array('status' => 'Approve'));
-            $this->db->order_by("article_id", "desc"); 
+            $this->db->order_by("article_id", "desc");
+
             $res = $this->db->get('article',10,$limit);
 
             $allData = array();
